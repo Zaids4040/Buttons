@@ -1,0 +1,136 @@
+/* Fullscreen div with centered content */
+.fullscreen-container {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+/* For inner content centering */
+.centered-content {
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+} 
+
+
+/* Base Button Styles */
+.btn {
+    position: relative;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+   
+}
+
+.btn:active {
+    box-shadow: 
+        0 0 0 rgba(0, 0, 0, 0.1),
+        0 0 0 rgba(255, 255, 255, 0.7),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+        inset -5px -5px 10px rgba(255, 255, 255, 0.7);
+    transform: translateY(2px);
+}
+
+
+/* Checkout Button Styles */
+.checkout-btn {
+    background: linear-gradient(145deg, #43cea2, #185a9d);
+    color: white;
+    min-width: 180px;
+}
+
+.delivery-car {
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%);
+    opacity: 0;
+    font-size: 20px;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+/* Animation Classes - Will be added by JavaScript */
+.checkout-btn.animate .btn-text {
+    opacity: 0;
+}
+
+.checkout-btn.animate .delivery-car {
+    animation: carMove 2s forwards;
+}
+
+.download-btn.animate .btn-text {
+    opacity: 0;
+}
+
+.download-btn.animate .download-progress {
+    opacity: 1;
+    animation: progressBar 1.5s forwards;
+}
+
+.download-btn.animate .download-complete {
+    animation: fadeInScale 0.5s 1.5s forwards;
+}
+
+.send-btn.animate .btn-text {
+    opacity: 0;
+}
+
+.send-btn.animate .paper-plane {
+    opacity: 1;
+    animation: sendPaperPlane 1.5s forwards;
+}
+
+.like-btn.animate .btn-text,
+.like-btn.animate .heart-icon {
+    opacity: 0;
+}
+
+.like-btn.animate .heart-burst {
+    animation: heartBurst 0.8s forwards;
+}
+
+.submit-btn.animate .btn-text {
+    opacity: 0;
+}
+
+.submit-btn.animate .submit-circle {
+    opacity: 1;
+    animation: circleExpand 0.5s forwards;
+}
+
+.submit-btn.animate .submit-check {
+    animation: fadeInScale 0.5s 0.5s forwards;
+}
+
+/* Keyframes for animations */
+@keyframes carMove {
+    0% {
+        right: -50px;
+        opacity: 0;
+    }
+    20% {
+        right: 70%;
+        opacity: 1;
+    }
+    80% {
+        right: 30%;
+        opacity: 1;
+    }
+    100% {
+        right: -50px;
+        opacity: 0;
+    }
+}

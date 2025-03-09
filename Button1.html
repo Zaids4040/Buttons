@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fullscreen Centered Content</title>
+       <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="fullscreen-container">
+            <div class="centered-content">
+                <!-- Example buttons from our button collection -->
+                <h1>Follow Me For More</h1>
+                <div class="button-section">
+                    <h2>Checkout Button</h2>
+                    <button class="btn checkout-btn">
+                        <span class="btn-text">Checkout</span>
+                        <div class="delivery-car">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            // Checkout Button Animation
+            const checkoutBtn = document.querySelector('.checkout-btn');
+            checkoutBtn.addEventListener('click', function() {
+                this.classList.add('animate');
+                
+                // Reset animation after it completes
+                setTimeout(() => {
+                    this.classList.remove('animate');
+                }, 2000);
+            });
+          });
+       </script>
+        
+    </body>
+</html> 
